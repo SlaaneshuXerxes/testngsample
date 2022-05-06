@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="AnnotationTransformer"/>
+    <listener class-name="CalculationListener"/>
+  </listeners>
+  <test thread-count="5" name="Tests(failed)">
+    <groups>
+      <run>
+        <include name="justATest"/>
+        <include name="failingAdditionTest"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="CalculationAdditionTest">
+        <methods>
+          <include name="testAdditionWillfail"/>
+          <include name="testAdditionWillBeIgnored"/>
+          <include name="setUpAdditionTests"/>
+        </methods>
+      </class> <!-- CalculationAdditionTest -->
+    </classes>
+  </test> <!-- Tests(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->

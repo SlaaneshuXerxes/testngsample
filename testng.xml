@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="none">
+    <listeners>
+        <listener class-name="AnnotationTransformer"></listener>
+        <listener class-name="CalculationListener"></listener>
+    </listeners>
+
+    <test name="Tests">
+
+        <groups>
+            <run>
+                <include name="justATest" />
+                <include name="failingAdditionTest"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="CalculationAdditionTest"></class>
+            <class name="CalculationSubtractionTest"></class>
+            <class name="CalculationMultiplicationTest"></class>
+        </classes>
+    </test>
+
+    <test name="parameterTests">
+        <parameter name="addPar1" value="12"></parameter>
+        <parameter name="addPar2" value="7"></parameter>
+        <parameter name="addParExpRes" value="19"></parameter>
+
+        <parameter name="mulPar1" value="7"></parameter>
+        <parameter name="mulPar2" value="2"></parameter>
+        <parameter name="mulParExpRes" value="14"></parameter>
+        <groups>
+            <run>
+                <include name="parameterTest"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="CalculationParameterTest"></class>
+        </classes>
+    </test>
+
+</suite>
